@@ -1,69 +1,15 @@
-# My Maven Tomcat Application
+# simple-java-maven-app
 
-This project is a simple web application that demonstrates how to create a "Hello World" website using Maven and deploy it on Apache Tomcat.
+This repository is for the
+[Build a Java app with Maven](https://jenkins.io/doc/tutorials/build-a-java-app-with-maven/)
+tutorial in the [Jenkins User Documentation](https://jenkins.io/doc/).
 
-## Project Structure
+The repository contains a simple Java application which outputs the string
+"Hello world!" and is accompanied by a couple of unit tests to check that the
+main application works as expected. The results of these tests are saved to a
+JUnit XML report.
 
-```
-my-maven-tomcat-app
-├── src
-│   ├── main
-│   │   ├── java
-│   │   │   └── com
-│   │   │       └── example
-│   │   │           └── HelloWorldServlet.java
-│   │   ├── resources
-│   │   └── webapp
-│   │       ├── WEB-INF
-│   │       │   └── web.xml
-│   │       └── index.jsp
-│   └── test
-│       └── java
-│           └── com
-│               └── example
-│                   └── HelloWorldServletTest.java
-├── pom.xml
-└── README.md
-```
-
-## Prerequisites
-
-- Java Development Kit (JDK) 8 or higher
-- Apache Maven
-- Apache Tomcat
-
-## Building the Project
-
-To build the project, navigate to the project directory and run the following command:
-
-```
-mvn clean package
-```
-
-This will compile the Java code, run tests, and package the application into a WAR file located in the `target` directory.
-
-## Running the Application
-
-1. Deploy the generated WAR file (located in `target/my-maven-tomcat-app.war`) to your Apache Tomcat server. You can do this by copying the WAR file to the `webapps` directory of your Tomcat installation.
-2. Start the Tomcat server.
-3. Access the application in your web browser at the following URL:
-
-```
-http://localhost:8080/my-maven-tomcat-app/
-```
-
-You should see "Hello, World!" displayed on the page.
-
-## Testing
-
-To run the unit tests, execute the following command:
-
-```
-mvn test
-```
-
-This will run the tests defined in `HelloWorldServletTest.java` to ensure that the `HelloWorldServlet` behaves as expected.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for more details.
+The `jenkins` directory contains an example of the `Jenkinsfile` (i.e. Pipeline)
+you'll be creating yourself during the tutorial and the `jenkins/scripts` subdirectory
+contains a shell script with commands that are executed when Jenkins processes
+the "Deliver" stage of your Pipeline.
